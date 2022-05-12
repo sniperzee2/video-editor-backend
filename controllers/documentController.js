@@ -202,7 +202,7 @@ exports.mergeVideos = async (req, res) => {
     let array = []
     for (var i = 0; i < video_file_path_list.length; i++) {
         array.push({
-            fileName: video_file_path_list[i]
+            fileName: '../'+video_file_path_list[i]
         })
     }
 
