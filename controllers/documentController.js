@@ -202,7 +202,7 @@ exports.mergeVideos = async (req, res) => {
     let array = []
     for (var i = 0; i < video_file_path_list.length; i++) {
         array.push({
-            fileName: `${path.join(__dirname, '../..', `${video_file_path_list[i]}`)}`
+            fileName: `${path.join(__dirname, '..', `${video_file_path_list[i]}`)}`
         })
     }
 
@@ -228,7 +228,8 @@ exports.mergeVideos = async (req, res) => {
             console.log(err)
             res.status(500).json({
                 status: "fail",
-                message: "Internal server error"
+                message: "Internal server error",
+                error: err
             })
         });
 }

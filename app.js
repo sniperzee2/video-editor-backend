@@ -14,6 +14,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cors())
 app.use(express.json())
 
+console.log(path.join(__dirname + '/Documents'))
 // ROUTES
 app.use('/Documents', express.static(path.join(__dirname + '/Documents')));
 
