@@ -160,6 +160,11 @@ exports.videoAudioMerge = async (req, res) => {
         exec(`ffmpeg -i ${video} -stream_loop -1 -i ${audio} -map 0:v -map 1:a -c copy -shortest .${output}`, (err, stderr, setdout) => {
             if (err) {
                 console.log(err)
+                res.status(400).json({
+                    status: "Failed",
+                    message: "Failed to merge audio and video",
+                    error: err
+                })
             }
             else {
                 console.log("conversion completed")
